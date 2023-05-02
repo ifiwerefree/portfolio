@@ -1,0 +1,613 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head> <br />
+
+<title>Danny Bull - Journalist - Cinematographer</title>
+<!--<link rel="shortcut icon" href="favicon/favicon.ico"> -->
+<link href="css/style.css" rel="stylesheet" type="text/css" media="screen" />
+
+	<style type="text/css">
+	
+	#dhtmlgoodies_menu{	/* Menu object */
+		margin:0px;
+		padding:0px;
+		width:150px;	/* Width of menu */
+	}
+
+	#dhtmlgoodies_menu li{
+		margin-top:2px;	/* Space between each menu item */
+		
+		
+		/* Don't change these four values */
+		list-style-type:none;				
+		clear:both;
+		display:block;	
+		overflow:auto;
+	}
+	
+	#dhtmlgoodies_menu li a{	/* Text rules for the menu items */
+		color:#000;	/* Black text color */
+		text-decoration:none;	/* No underline */
+		font-family: Trebuchet MS, Lucida Sans Unicode, Arial, sans-serif;	/* Font to use */
+		letter-spacing:1px;	/* Extra space between each letter of the menu items */
+		font-size:0.7em;	/* Fixed font size */
+		font-weight:bold;	/* Bold font */
+		float:left;
+		background-color:#F1F1F1;
+		padding-left:3px;
+		line-height:25px;	/* Height of menu links */
+
+	}
+	#dhtmlgoodies_menu li div{
+		float:left;
+
+	}
+	</style>
+	<script type="text/javascript" src="color_functions.js"></script>
+	<SCRIPT type="text/javascript">
+	/************************************************************************************************************
+	(C) www.dhtmlgoodies.com, October 2005
+	
+	This is a script from www.dhtmlgoodies.com. You will find this and a lot of other scripts at our website.	
+	
+	Terms of use:
+	You are free to use this script as long as the copyright message is kept intact. However, you may not
+	redistribute, sell or repost it without our permission.
+	
+	Thank you!
+	
+	www.dhtmlgoodies.com
+	Alf Magne Kalleland
+	
+	************************************************************************************************************/
+	
+	/* You can modify the following javascript variables as you like */
+	
+	var initActiveMenuItem = 0; // 	If one of the menu items should be initially highlighted.(-1 = none, 0 = first item, 1 = second...)
+	var activeSmallSquareColor = '#D60808'; // Color of small square at the left of each menu item
+	var colorSquareWidth = 2; 	// Width of small square;
+	var marginSquare = 1;	// Margin at the right of the small color square at the left of each menu item	
+	
+	var bgColorLinks = "#E2EBED";	// Background color for menu links
+	var degreesToDarkenOrLighten = 5; // How many percent point to darken the color above on mouse over (10-15 percent point is usually enough).
+	var darkenOnMouseOver = true;	// Darken or Lighten on mouse over (true = darken, false = lighten) 
+	/* ABOUT COLORS
+	You can use the color schemer at www.dhtmlgoodies.com to find your colors
+	
+	We use the HSB color system here, The HSB color system is based on three values
+	
+	* Hue = Which color, i.e. degree on color wheel
+	* Saturation = Intensity of the color to use
+	* Brightness = Brightness of the color
+	
+	
+	When you use the color schemer at the site, pick a color from the palett or type it into the RGB text box(format #RRGGBB, example #E2EBED)
+	Then adjust the value of brightness by typing in a new value in that text box(label "B"). 
+	
+	*/		
+		
+	var timeStepOpacitySquare = 15;	// Microseconds between each opacity change	-> Lower value = faster
+	var opacityChangePerStep = 10;	// Steps - change in opacity - on mouse out	= Higher = faster	
+	var timeStepSwitchBgColor = 10;	// Microseconds between each text background change(darken or lighten)	-> Lower value = faster
+	var bgColorStep  = 0.75;	// lower value = slower bg color fading(Usually, you will always have the value 1 or a little lower)
+								// Choose a low value if the number of degrees to darken is low.
+	
+	/************************************************************************************************************
+	* END OF USER VARIABLES
+	*
+	* Don't change anything below here 
+	*
+	************************************************************************************************************/
+	var activeMenuItem = false;
+	var activeMenuLink = false;	
+	var menuObj;
+	var brightnessLink = false; 
+	var brightnessLinkMin = false;
+	var darkenBrightnessCounter = false; // Darken or lighten - this variable is set manually
+	var startHue = false;
+	var startSat = false;
+	
+	
+	
+	function showMenuItem()
+	{
+		var hsb = toHSV(this.getAttribute('bgColorItem'));
+		if(darkenOnMouseOver){
+			var brightness = hsb[2] - (degreesToDarkenOrLighten/100);
+		}else{
+			var brightness = hsb[2] + (degreesToDarkenOrLighten/100);
+		}
+		if(brightness<0)brightness=0;
+		if(brightness>1)brightness=1;
+		var rgb = toRgb(hsb[0],hsb[1],brightness);
+		this.style.backgroundColor = rgb;
+		this.currentBgColorItem = rgb;
+		this.setAttribute('currentBgColorItem',rgb);
+		
+		var obj = this.parentNode.getElementsByTagName('DIV')[0];
+		obj.setAttribute('okToHide','0');
+		obj.okToHide = 0;
+		this.setAttribute('okToHide','0');
+		this.okToHide = 0;
+		obj.style.visibility = 'visible';
+		
+		obj.style.opacity = 0.98;	
+		obj.style.filter = 'alpha(opacity=98)';
+		
+
+	}
+	
+	function hideMenuItem()
+	{
+		if(this.getAttribute('initActive')=='1')return;
+		if(this.initActive=='1')return;
+		var obj = this.parentNode.getElementsByTagName('DIV')[0];
+		obj.setAttribute('okToHide','1');
+		obj.okToHide = 1;
+		this.setAttribute('okToHide','1');
+		this.okToHide = 1;
+		obj.style.visibility = 'visible';		
+		if(navigator.userAgent.indexOf('Opera')>=0){
+			obj.style.visibility = 'hidden';
+		}else{
+			progressHideSquare(obj.id,(opacityChangePerStep*-1));	
+		}		
+		progressShowHideBgColor(this.id);	
+	}
+	
+	
+	function progressShowHideBgColor(inputId)
+	{
+		
+		var obj = document.getElementById(inputId);
+		var currentBgColor = obj.getAttribute('currentBgColorItem');
+		if(obj.getAttribute('okToHide')=='0')return;
+		if(!currentBgColor)currentBgColor = obj.currentBgColorItem;
+		if(currentBgColor){
+			var hsb = toHSV(currentBgColor);
+			var brightness = hsb[2];			
+			brightness+=darkenBrightnessCounter;
+			if((brightness>brightnessLink && darkenOnMouseOver) || (brightness<brightnessLink && !darkenOnMouseOver))brightness = brightnessLink;
+			var rgb = toRgb(startHue,startSat,brightness);
+			obj.style.backgroundColor = rgb;
+			obj.currentBgColorItem = rgb;
+			obj.setAttribute('currentBgColorItem',rgb);		
+			if((hsb[2]<brightness && darkenOnMouseOver) || (hsb[2]>brightness && !darkenOnMouseOver)){
+				setTimeout('progressShowHideBgColor(\'' + inputId + '\')',timeStepSwitchBgColor);				
+			}else{
+				obj.style.backgroundColor = bgColorLinks;
+			}
+		}			
+	}	
+	
+	function progressHideSquare(inputId,step)
+	{
+		
+		var obj = document.getElementById(inputId);
+
+		if(obj.getAttribute('okToHide')=='0' && step<0)return;
+				
+		if(document.all){
+			var currentOpacity = obj.style.filter.replace(/[^\d]/g,'')/1;
+
+			if(currentOpacity>=99){
+
+			}
+			else if(currentOpacity==11){
+				obj.style.visibility='hidden';
+			}else{
+				currentOpacity = currentOpacity + step;
+				if(currentOpacity<1)currentOpacity=1;
+				if(currentOpacity>99)currentOpacity=9;
+				obj.style.filter = 'alpha(opacity=' + currentOpacity + ')';
+				setTimeout('progressHideSquare("' + inputId + '",' + (step) + ')',timeStepOpacitySquare);
+			}				
+		}else{
+			step = step / 100;
+			var currentOpacity = obj.style.opacity/1;
+
+			if(currentOpacity>=0.99){
+
+			}
+			else if(currentOpacity==0.01){
+				obj.style.visibility='hidden';
+			}else{
+				currentOpacity = currentOpacity + step;
+
+				if(currentOpacity<0.01)currentOpacity=0.01;
+				if(currentOpacity>0.99)currentOpacity=0.99;
+				obj.style.opacity = currentOpacity;
+				setTimeout('progressHideSquare("' + inputId + '",' + (step*100) + ')',timeStepOpacitySquare);
+			}	
+		}		
+	}
+	
+	
+	function dhtmlgoodies_initMenu()
+	{
+		menuObj = document.getElementById('dhtmlgoodies_menu');
+		var hsbArray = toHSV(bgColorLinks);
+		brightnessLink = hsbArray[2];
+		startHue = hsbArray[0];
+		startSat = hsbArray[1];
+		if(darkenOnMouseOver){
+			brightnessLinkMin = Math.max(hsbArray[2] - (degreesToDarkenOrLighten/100),0);
+			darkenBrightnessCounter = bgColorStep/100;
+		}else{
+			brightnessLinkMin = Math.min(hsbArray[2] + (degreesToDarkenOrLighten/100),1);
+			darkenBrightnessCounter = (bgColorStep/100)*-1;
+		}
+		var listItems = menuObj.getElementsByTagName('LI');
+		for(var no=0;no<listItems.length;no++){
+			listItems[no].id = 'listItem' + no;	
+	
+			var menuLink = listItems[no].getElementsByTagName('A')[0];
+			var height = menuLink.offsetHeight;	
+			menuLink.style.display='block';
+			menuLink.style.height=height + 'px';
+			menuLink.style.lineHeight=height + 'px';
+			menuLink.onmouseover = showMenuItem;		
+			menuLink.onmouseout = hideMenuItem;		
+			menuLink.style.backgroundColor = bgColorLinks;
+			menuLink.setAttribute('bgColorItem',bgColorLinks);
+			menuLink.bgColorItem = bgColorLinks;
+			menuLink.setAttribute('currentBgColorItem',bgColorLinks);
+			menuLink.currentBgColorItem = bgColorLinks;
+			menuLink.id = 'listLink' + no;
+			
+			
+			
+			var colorDiv = document.createElement('DIV');
+			colorDiv.innerHTML = '<span><\/span>';
+			colorDiv.style.height = height + 'px';
+			colorDiv.style.width = colorSquareWidth + 'px';
+			colorDiv.style.backgroundColor = activeSmallSquareColor;
+			colorDiv.style.marginRight = marginSquare + 'px';
+			colorDiv.style.visibility = 'hidden'			
+			colorDiv.id = 'colorSquare' + no;
+			colorDiv.style.opacity = 0.99;	// Not possible to use 1 because of JS flickering in Firefox
+			colorDiv.style.filter = 'alpha(opacity=100)';
+			
+			if(initActiveMenuItem==no){
+				colorDiv.style.visibility = 'visible';
+				menuLink.style.backgroundColor = toRgb(startHue,startSat,brightnessLinkMin);
+				menuLink.initActive = '1';
+				menuLink.setAttribute('initActive','1');
+				
+			}
+			
+			listItems[no].appendChild(colorDiv);			
+			listItems[no].appendChild(menuLink);
+
+			var clearDiv = document.createElement('DIV');
+			clearDiv.style.clear='both';
+			listItems[no].appendChild(clearDiv);
+						
+			var currentWidth = (listItems[no].offsetWidth - colorDiv.offsetWidth - marginSquare);
+			menuLink.style.width =  currentWidth + 'px';
+			while(listItems[no].offsetHeight>=(menuLink.offsetHeight*2)){		
+				currentWidth--;	
+				menuLink.style.width =  currentWidth + 'px';
+				
+			}
+		}		
+	}
+	window.onload = dhtmlgoodies_initMenu;
+	
+	</script>
+	
+
+
+<meta property="og:image" content="images/facebookshare.jpg" />
+
+
+<meta property="og:image" content="images/facebookshare.jpg"/>
+<meta property="og:image:secure_url" content="images/facebookshare.jpg" />
+
+
+
+</head>
+
+<body>
+<div class="container">
+<div class="profilelogo" style="float: left"><a title="Index" href="index.html"><img src="images/hiddenlogo.png" /></a></div>
+<div id="navmenu">
+
+
+<ul>
+	 <li><a href="index.html">Home</a></li>
+	 <li><a href="videos.html">Videos</a></li>
+	<!-- <li><a href="stills.html">Stills</a></li>
+    <li><a href="interactives.html">Interactives</a></li>
+    <li><a href="projects.html">Projects</a></li>  -->
+    <li><a href="about.html">About</a></li> 
+</ul>
+</div>
+
+
+
+  <img src="images/whiteline.jpg"/>
+
+<!--
+  <h3 style="font-family:'times new roman', times, serif; text-decoration: underline; font-size: 16px;">Showreel:</h3>
+-->
+
+<div class="content">
+<div class="homeMovie">
+
+
+
+
+
+
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='http://player.vimeo.com/video/80665637' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+
+
+
+<br />
+
+
+  <img src="images/whiteline.jpg"/>
+
+<h3 style="font-family:'times new roman', times, serif; text-decoration: underline; font-size: 16px;">Portfolio:</h3>
+
+
+
+<div class="content">
+
+	<div class="column1">    
+
+	<!-- COLUMN 1 !!!!! -->
+    
+
+
+ 
+
+
+      <div class="motion">
+
+   			<a href="zanskar.html">
+			<img src="images/zanskarthumb.jpg" /></a>
+
+
+	</div>
+
+<h3> <a href="zanskar.html"/> Return to Zanskar </a><br />
+
+ <br /><br />
+
+
+ 		<div class="motion">
+
+			<a href="blindorchestra.html">
+				<img src="images/blindorchestrathumb.jpg" /></a>
+
+		</div>
+
+
+ 	   <h3><a href="blindorchestra.html"/> The Thai Blind Orchestra </a>
+ 	   <br /> <br /><br />
+
+
+ 	   <div class="motion">
+
+			<a href="tiger.html">
+				<img src="images/tigerthumb.jpg" /></a>
+
+		</div>
+
+
+ 	   <h3><a href="tiger.html"/> Thailand Wildlife Trafficking </a>
+ 	   <br /> <br /><br />
+
+
+
+
+
+ 	   <div class="motion">
+
+			<a href="yingluck.html">
+				<img src="images/yingluckthumb.jpg" /></a>
+
+		</div>
+
+
+ 	   <h3><a href="yingluck.html"/> Ousted Thai Prime Minister Yingluck Shinawatra </a>
+ 	   <br /> <br /><br /> 
+
+
+
+    </div>
+     
+
+
+     <!-- COLUMN 1 !!!!! -->
+
+
+
+
+
+
+     <!-- COLUMN 2 !!!!! -->
+ 
+    <div class="column2" style="margin-top: 1px">
+    	
+
+    	
+
+    <div class="motion">
+
+	<a href="besttone.html">
+			<img src="images/besttonethumb.jpg" /></a>
+
+</div>
+
+
+    <h3><a href="besttone.html"/> The Best Tone in Myanmar </a>
+    <br />
+ 
+ <br /><br />
+
+
+<div class="motion" style="margin-top: -2px">
+
+	<a href="philippines.html">
+			<img src="images/philippinesthumb.jpg" /></a>
+
+</div>
+
+
+    <h3><a href="philippines.html"/> The Philippines: Shadow of the Drug War </a><br /> 
+ 
+ <br /><br />
+
+
+
+
+
+
+		<div class="motion">
+
+			<a href="witness.html">
+				<img src="images/witnessthumb.jpg" /></a>
+
+		</div>
+
+
+ 	   <h3><a href="witness.html"/> Thammasat University Massacre Witness  </a>
+ 	   <br /> <br /><br />
+
+
+
+
+
+
+
+
+ 	   <div class="motion">
+
+			<a href="eviction.html">
+				<img src="images/evictionthumb.jpg" style="margin-top: 7px;" /></a>
+
+		</div>
+
+
+ 	   <h3><a href="eviction.html"/> 100-year-old community facing eviction  </a>
+ 	   <br /> <br /><br />
+
+
+
+
+
+    </div>
+
+<!-- COLUMN 2 !!!!! -->
+
+
+<!-- COLUMN 3 !!!!! -->
+
+
+    
+    <div class="column3">
+    
+
+
+
+<div class="motion">
+
+   			<a href="names.html">
+			<img src="images/namesthumb.jpg"/></a>
+
+
+	</div>
+
+
+    <h3><a href="names.html" style="margin-top: 100px;" /> Pages of Testimony </a><br /> 
+ 
+ <br /><br />
+
+
+
+
+		<div class="motion">
+
+   			<a href="special2015.html">
+				<img src="images/special2015thumb.jpg" />
+			</a>
+
+		</div>
+
+
+    		<h3>
+    			<a href="names.html" style="margin-top: 100px;" /> Special Olympics 2015 - Los Angeles, USA </a>
+    		</h3><br />
+
+
+
+
+
+
+
+		<div class="motion">
+
+   			<a href="govinda.html">
+				<img src="images/govindathumb.jpg" />
+			</a>
+
+		</div>
+
+
+    		<h3>
+    			<a href="names.html" style="margin-top: 100px;" /> Govinda Bhasya - In The Living Room </a>
+    		</h3><br />
+
+
+
+
+
+
+
+
+    	<div class="motion">
+
+   			<a href="rehab.html">
+				<img src="images/rehabthumb.jpg" />
+			</a>
+
+		</div>
+
+
+    		<h3>
+    			<a href="rehab.html" style="margin-top: 100px;" /> Philippine Drug War - Inside a Rehab Centre </a>
+    		</h3><br />
+
+
+
+ <!-- COLUMN 3 !!!!! -->
+ 
+
+
+</h3>
+</div>
+
+
+
+</div>
+</h3>
+</body>
+
+
+
+<img src="images/whiteline.jpg" style="margin-top: -30px" />
+
+</h3>
+
+
+<div class="footer">
+<div class="copyright">Danny Bull &copy; 2008-2017 all rights reserved. +66.81.848.5532 <a href="mailto:dannyabull@gmail.com">dannyabull@gmail.com</a> </p></div>
+    
+    
+	
+</html>

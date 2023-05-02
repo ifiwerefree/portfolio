@@ -1,0 +1,661 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <title>Danny Bull - Portfolio</title>
+    <link rel="shortcut icon" href="https://img.icons8.com/ios-filled/2x/slr-camera.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:type" content="Danny Bull">
+    <meta property="og:url" content="http://www.dannybull.com">
+    <meta property="og:image" content="http://dannybull.com/images/webpagethumbnail.png">
+    <meta name="og:image" content="http://dannybull.com/images/webpagethumbnail.png">
+    <section id="showreelclick"> 
+    <link rel="stylesheet" href="style.css">
+    
+
+    <script>
+        
+  // create an array to store the images
+  var images = [];
+
+  // load the images
+  function preload() {
+    for (var i = 0; i < arguments.length; i++) {
+      images[i] = new Image();
+      images[i].src = preload.arguments[i];
+    }
+  }
+
+  // use the preload function to load the hover image
+  
+  preload("images/srilanka.jpg");
+  preload("images/cremation.jpg");
+  preload("images/thaicave.jpg");
+  preload("images/hongkong.jpg");
+  preload("images/rohingya.jpg");
+
+
+
+  preload("images/zanskarhover.jpg");
+  preload("images/elephantshover.jpg");
+  preload("images/cannabishover.jpg");
+  preload("images/srilankahover.jpg");
+  preload("images/cremationhover.jpg");
+  preload("images/thaicavehover.jpg");
+  preload("images/hongkonghover.jpg");
+  preload("images/rohingyahover.jpg");
+
+
+</script>
+
+
+<script>
+  var hoverImage = new Image();
+  hoverImage.src = "images/zanskarhover.jpg";
+  hoverImage.onload = function() {
+    // add event listeners for hover and touch
+    document.querySelector('.zanskar').addEventListener('mouseover', function() {
+        this.querySelector('::before').style.backgroundImage = 'url(images/zanskarhover.jpg)';
+        this.querySelector('::before').style.opacity = 0;
+        setTimeout(() => {
+          this.querySelector('::before').style.opacity = 1;
+        }, 50);
+    });
+    document.querySelector('.zanskar').addEventListener('mouseout', function() {
+        this.querySelector('::before').style.backgroundImage = 'none';
+    });
+    document.querySelector('.zanskar').addEventListener('touchstart', function() {
+        this.querySelector('::before').style.backgroundImage = 'url(images/zanskarhover.jpg)';
+        this.querySelector('::before').style.opacity = 0;
+        setTimeout(() => {
+          this.querySelector('::before').style.opacity = 1;
+        }, 50);
+    });
+    document.querySelector('.zanskar').addEventListener('touchend', function() {
+        this.querySelector('::before').style.backgroundImage = 'none';
+    });
+  }
+  
+
+
+  var hoverImage2 = new Image();
+  hoverImage2.src = "images/elephantshover.jpg";
+  hoverImage2.onload = function() {
+    // add event listeners for hover and touch
+    document.querySelector('.elephants').addEventListener('mouseover', function() {
+        this.querySelector('::before').style.backgroundImage = 'url(images/elephantshover.jpg)';
+        this.querySelector('::before').style.opacity = 0;
+        setTimeout(() => {
+          this.querySelector('::before').style.opacity = 1;
+        }, 50);
+    });
+    document.querySelector('.elephants').addEventListener('mouseout', function() {
+        this.querySelector('::before').style.backgroundImage = 'none';
+    });
+    document.querySelector('.elephants').addEventListener('touchstart', function() {
+        this.querySelector('::before').style.backgroundImage = 'url(images/elephantshover.jpg)';
+        this.querySelector('::before').style.opacity = 0;
+        setTimeout(() => {
+          this.querySelector('::before').style.opacity = 1;
+        }, 50);
+    });
+    document.querySelector('.elephants').addEventListener('touchend', function() {
+        this.querySelector('::before').style.backgroundImage = 'none';
+    });
+  }
+
+
+
+
+  var hoverImage2 = new Image();
+  hoverImage2.src = "images/srilankahover.jpg";
+  hoverImage2.onload = function() {
+    // add event listeners for hover and touch
+    document.querySelector('.srilanka').addEventListener('mouseover', function() {
+        this.querySelector('::before').style.backgroundImage = 'url(images/srilankahover.jpg)';
+        this.querySelector('::before').style.opacity = 0;
+        setTimeout(() => {
+          this.querySelector('::before').style.opacity = 1;
+        }, 50);
+    });
+    document.querySelector('.srilanka').addEventListener('mouseout', function() {
+        this.querySelector('::before').style.backgroundImage = 'none';
+    });
+    document.querySelector('.srilanka').addEventListener('touchstart', function() {
+        this.querySelector('::before').style.backgroundImage = 'url(images/srilankahover.jpg)';
+        this.querySelector('::before').style.opacity = 0;
+        setTimeout(() => {
+          this.querySelector('::before').style.opacity = 1;
+        }, 50);
+    });
+    document.querySelector('.srilanka').addEventListener('touchend', function() {
+        this.querySelector('::before').style.backgroundImage = 'none';
+    });
+  }
+
+
+
+
+
+
+  var hoverImage2 = new Image();
+  hoverImage2.src = "images/cannabishover.jpg";
+  hoverImage2.onload = function() {
+    // add event listeners for hover and touch
+    document.querySelector('.cannabis').addEventListener('mouseover', function() {
+        this.querySelector('::before').style.backgroundImage = 'url(images/cannabishover.jpg)';
+        this.querySelector('::before').style.opacity = 0;
+        setTimeout(() => {
+          this.querySelector('::before').style.opacity = 1;
+        }, 50);
+    });
+    document.querySelector('.cannabis').addEventListener('mouseout', function() {
+        this.querySelector('::before').style.backgroundImage = 'none';
+    });
+    document.querySelector('.cannabis').addEventListener('touchstart', function() {
+        this.querySelector('::before').style.backgroundImage = 'url(images/cannabishover.jpg)';
+        this.querySelector('::before').style.opacity = 0;
+        setTimeout(() => {
+          this.querySelector('::before').style.opacity = 1;
+        }, 50);
+    });
+    document.querySelector('.cannabis').addEventListener('touchend', function() {
+        this.querySelector('::before').style.backgroundImage = 'none';
+    });
+  }
+
+
+
+  var hoverImage2 = new Image();
+  hoverImage2.src = "images/thaicavehover.jpg";
+  hoverImage2.onload = function() {
+    // add event listeners for hover and touch
+    document.querySelector('.thaicave').addEventListener('mouseover', function() {
+        this.querySelector('::before').style.backgroundImage = 'url(images/thaicavehover.jpg)';
+        this.querySelector('::before').style.opacity = 0;
+        setTimeout(() => {
+          this.querySelector('::before').style.opacity = 1;
+        }, 50);
+    });
+    document.querySelector('.thaicave').addEventListener('mouseout', function() {
+        this.querySelector('::before').style.backgroundImage = 'none';
+    });
+    document.querySelector('.thaicave').addEventListener('touchstart', function() {
+        this.querySelector('::before').style.backgroundImage = 'url(images/thaicavehover.jpg)';
+        this.querySelector('::before').style.opacity = 0;
+        setTimeout(() => {
+          this.querySelector('::before').style.opacity = 1;
+        }, 50);
+    });
+    document.querySelector('.thaicave').addEventListener('touchend', function() {
+        this.querySelector('::before').style.backgroundImage = 'none';
+    });
+  }
+
+
+
+
+  var hoverImage2 = new Image();
+  hoverImage2.src = "images/cremationhover.jpg";
+  hoverImage2.onload = function() {
+    // add event listeners for hover and touch
+    document.querySelector('.cremation').addEventListener('mouseover', function() {
+        this.querySelector('::before').style.backgroundImage = 'url(images/cremationhover.jpg)';
+        this.querySelector('::before').style.opacity = 0;
+        setTimeout(() => {
+          this.querySelector('::before').style.opacity = 1;
+        }, 50);
+    });
+    document.querySelector('.cremation').addEventListener('mouseout', function() {
+        this.querySelector('::before').style.backgroundImage = 'none';
+    });
+    document.querySelector('.cremation').addEventListener('touchstart', function() {
+        this.querySelector('::before').style.backgroundImage = 'url(images/cremationhover.jpg)';
+        this.querySelector('::before').style.opacity = 0;
+        setTimeout(() => {
+          this.querySelector('::before').style.opacity = 1;
+        }, 50);
+    });
+    document.querySelector('.cremation').addEventListener('touchend', function() {
+        this.querySelector('::before').style.backgroundImage = 'none';
+    });
+  }
+
+
+
+
+
+
+  var hoverImage2 = new Image();
+  hoverImage2.src = "images/hongkonghover.jpg";
+  hoverImage2.onload = function() {
+    // add event listeners for hover and touch
+    document.querySelector('.hongkong').addEventListener('mouseover', function() {
+        this.querySelector('::before').style.backgroundImage = 'url(images/hongkonghover.jpg)';
+        this.querySelector('::before').style.opacity = 0;
+        setTimeout(() => {
+          this.querySelector('::before').style.opacity = 1;
+        }, 50);
+    });
+    document.querySelector('.hongkong').addEventListener('mouseout', function() {
+        this.querySelector('::before').style.backgroundImage = 'none';
+    });
+    document.querySelector('.hongkong').addEventListener('touchstart', function() {
+        this.querySelector('::before').style.backgroundImage = 'url(images/hongkonghover.jpg)';
+        this.querySelector('::before').style.opacity = 0;
+        setTimeout(() => {
+          this.querySelector('::before').style.opacity = 1;
+        }, 50);
+    });
+    document.querySelector('.hongkong').addEventListener('touchend', function() {
+        this.querySelector('::before').style.backgroundImage = 'none';
+    });
+  }
+
+
+
+
+
+
+
+
+  var hoverImage2 = new Image();
+  hoverImage2.src = "images/rohingyahover.jpg";
+  hoverImage2.onload = function() {
+    // add event listeners for hover and touch
+    document.querySelector('.rohingya').addEventListener('mouseover', function() {
+        this.querySelector('::before').style.backgroundImage = 'url(images/rohingyahover.jpg)';
+        this.querySelector('::before').style.opacity = 0;
+        setTimeout(() => {
+          this.querySelector('::before').style.opacity = 1;
+        }, 50);
+    });
+    document.querySelector('.rohingya').addEventListener('mouseout', function() {
+        this.querySelector('::before').style.backgroundImage = 'none';
+    });
+    document.querySelector('.rohingya').addEventListener('touchstart', function() {
+        this.querySelector('::before').style.backgroundImage = 'url(images/rohingyahover.jpg)';
+        this.querySelector('::before').style.opacity = 0;
+        setTimeout(() => {
+          this.querySelector('::before').style.opacity = 1;
+        }, 50);
+    });
+    document.querySelector('.rohingya').addEventListener('touchend', function() {
+        this.querySelector('::before').style.backgroundImage = 'none';
+    });
+  }
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+</head>
+
+
+ <!--
+    <div class="parallax-container"> 
+        <-- other elements go here --
+    </div> -->
+
+
+<body>
+
+    <div class="bodycontainer">
+
+       
+            
+<header>
+    <section id="showreel"> </section>
+	<div class="navholder" id="navholder">   
+    
+	<nav class="navbar" id="navbar">
+		
+        <div class="logo"><a href="home.html"><img src="images/hiddenlogo.png" class="img-responsive" /></a>
+        </div> <!-- closes div class logo -->
+
+		<ul class="nav-menu">
+			<li class="nav-item">
+                    <a href="home.html" class="nav-link">Home</a>
+            </li>
+                <li class="nav-item">
+                    <a href="videos.html" class="nav-link">Videos</a>
+            </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                
+                <!-- <li class="nav-item">
+                    <a href="https://www.fstopfrenzy.com" class="nav-link" target="_blank">Blog</a>
+                </li> 
+            -->
+
+		</ul>
+
+
+        		<div class="hamburger" style="margin-left: 110px;"> 
+        			<span class="bar"></span>
+                    <span class="bar"></span>
+        			<span class="bar"></span>
+                    <div class="hamburgertext" style="color: white;"> </div>
+        		</div> <!-- closer div class hamburger --> 
+    </nav>
+	</div> <!-- closes div class navholder -->
+</header>
+
+
+
+
+ 
+<!--Showreel -->
+
+<div class="whitelinedivtop"></div>
+
+    <div class="whiteline">    
+        <span> <br /> </span>
+    </div> 
+
+        
+        <div class="bigcontentcontainer"> 
+            <div class="whitelinedivtopphone"></div>
+               <iframe src="https://player.vimeo.com/video/329532034" style="margin-top:-30px" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>    
+        </div> <!-- closes div class bigcontentcontainer" -->
+
+                            <div class="hiddensection">
+                                       <section id="videos"></section>
+                            </div> <!-- closes div class hiddensection" -->
+        
+        <div class="whitelinedivbottomhome"></div><div class="whitelinedivbottomhomephone"></div> <br />    
+
+
+
+    <button id="back-to-top-btn">Back to top &#8593</button>
+
+
+
+
+
+
+
+
+<!--Featured Videos-->
+
+<br /><br />
+
+
+
+
+
+	
+    <div class="bodycontainernopad" style="margin-top:-10px"> <br />
+    
+    <div class="videos"> 
+    
+        <h6>Explore Video Portfolio Below:</h6>
+
+    <!-- COLUMN 1 !!!!! -->
+    <div class="column1">    
+
+       
+
+        
+         <div class="zanskar">
+            <a href="zanskar.html">
+            <img src="images/zanskar.jpg" href="zanskar.html"/></div></a>
+            <h3>  Return to Zanskar </h3><p> 
+        
+
+
+        <div class="cremation">
+
+            <a href="cremation.html">
+            <img src="images/cremation.jpg" /></div></a>
+            <h3> A Funeral Fit For A King</h3>  <p>   
+        
+            
+
+        
+<!--
+
+        <div class="motion">
+
+            <a href="blindorchestra.html">
+            <img src="https://petapixel.com/assets/uploads/2016/01/101.jpg" /></a>
+
+        </div>
+
+            <a href="zanskar.html"/> <h3> The Best Tone in Myanmar </h3> </a>
+
+        -->
+
+    </div>
+
+
+
+
+
+    <!-- COLUMN 2 !!!!! -->
+    <div class="column2">    
+     
+
+        <div class="rohingya">
+
+           <a href="rohingya.html">
+            <img src="images/rohingya.jpg" /></div></a>
+            <h3>Plight of the Rohingya </h3> <p>
+
+
+
+        <div class="hongkong">
+
+           <a href="hongkong.html">
+            <img src="images/hongkong.jpg" /></div></a>
+            <h3>Hong Kong Protests </h3> <p>
+        
+
+
+
+        
+
+<!--
+        <div class="motion">
+
+            <a href="blindorchestra.html">
+            <img src="https://petapixel.com/assets/uploads/2016/01/101.jpg" /></a>
+        </div>   
+
+            <a href="zanskar.html"/> <h3>Thailand Wildlife Trafficking </h3> </a>
+-->
+        
+
+
+
+    </div>
+       
+
+
+
+
+
+    <div class="column3">    
+        <div class="thaicave">
+
+            <a href="thaicave.html">
+            <img src="images/thaicave.jpg" /></div></a>
+            <h3>  Thai Cave Rescue - Where are they now? </h3> <p>
+        
+        
+
+
+           <div class="srilanka">
+
+            <a href="srilanka.html">
+            <img src="images/srilanka.jpg"/></div></a>
+            <h3>Sri Lanka's Economic Crisis</h3> <p>
+<!--
+
+           <div class="srilanka">
+
+            <a href="srilanka.html">
+            <img src="images/srilanka.jpg"/></div></a>
+            <h3>Sri Lanka's Economic Crisis</h3> <p> 
+
+<!--
+        <div class="elephants">
+
+            <a href="elephants.html">
+            <img src="images/elephants.jpg" /></div> </a>
+            <h3>The Ethics of Elephant Tourism </h3><p> -->   <br /> 
+
+       
+
+            <a href="videos.html"> <h3 style="margin: auto;"> Load more videos &rarr;</h3> </a> <br />
+
+        
+        <!--
+
+        <div class="motion">
+
+            <a href="blindorchestra.html">
+            <img src="images/zanskar.jpg" /></a>
+        </div>    
+            <a href="zanskar.html"/> <h3> Govinda Bhasya - In The Living Room</h3> </a>
+
+        -->
+
+<div class="hiddenhover">
+    <script>
+        var imageSources = [
+            "images/pages.jpg",
+            "images/mayabay.jpg",
+            "images/australia.jpg",
+            "images/cannabis.jpg",
+            "images/brunei.jpg",
+            "images/philppines.jpg",
+            "images/elephants.jpg",
+            "images/wildlife.jpg",
+            "images/childboxing.jpg",
+            "images/shadow.jpg",
+            "images/blind.jpg",
+            "images/massacre.jpg"
+        ];
+
+        setTimeout(function() {
+            for (var i = 0; i < imageSources.length; i++) {
+                var img = document.createElement("img");
+                img.src = imageSources[i];
+                document.body.appendChild(img);
+                img.remove(); // this statement removes the image from the page
+            }
+        }, 6000);
+    </script>
+
+</div>
+
+
+
+
+    </div>
+</div> <!-- closes "videos" div-->
+</div> <!-- closes "body container" div-->
+
+       
+
+
+
+   <!-- <div class="backgroundgradient" id="backgroundgradient">     -->
+
+    
+        <div class="bodycontainernopad">
+          
+          <!--  <div class="aboutme">
+                <h4>About Me:</h4>
+                 <p>Danny Bull is an award winning journalist and filmmaker working as a cameraman for the BBC based in Bangkok, Thailand. He joined the BBC first as a Video Journalist in 2014 and then promoted to Senior Cameraman in 2017 covering the South-east Asia and beyond.
+                <p><p>
+
+                Prior to joining the BBC, Danny was a Multimedia Producer for the Associated Press. He has worked across five continents directing, producing, and filming news and documentaries. <p><p>
+
+                Danny was born in Rio de Janiero, Brazil and raised in Asia, Europe and the U.S. He speaks English, Spanish, Portuguese and Thai.
+                <p><p>    
+                Click here to download resume
+                        -->
+                    <!--      <section id="aboutme">
+                          </section>
+                <h5>
+                <p></p> Danny Bull is an accomplished journalist and filmmaker, currently working as a Senior Cameraman for the BBC in Bangkok, Thailand. He has been with the BBC since 2014 first as a Video Journalist in 2014 and then promoted to Senior Cameraman in 2017 covering stories across South-East Asia and beyond.
+
+                <p><p></p></p> Prior to joining the BBC, Danny was a Multimedia and Interactive Producer for the Associated Press, where he honed his skills in directing, producing, and filming news and documentaries on a global scale. He has worked across five continents, gaining a broad global perspective.<p><p>
+
+                Born in Rio de Janeiro, Brazil, and raised in Asia, Europe, and the United States, Danny is fluent in English, Spanish, Portuguese and Thai which allows him to effectively communicate and work with people from diverse backgrounds. He has received numerous awards for his work and is known for his ability to capture compelling stories and images from around the world.
+                <p><p></p></p>    
+                Click here to download resume
+                </p></p></h5>
+            </div>
+            
+            
+        </div></div>
+
+     -->
+
+
+<script src="script.js"></script>
+
+
+
+
+    </body>        
+
+        
+ 
+
+<div class="hiddenhover">
+   <img src="images/zanskarhover.jpg"/>
+   <img src="images/pageshover.jpg"/>
+   <img src="images/cremationhover.jpg"/>
+   <img src="images/rohingyahover.jpg"/>
+   <img src="images/thaicavehover.jpg"/>
+   <img src="images/hongkonghover.jpg"/>
+   <img src="images/srilankahover.jpg"/>
+</div>
+
+    
+        <div class="bodycontainer">
+             
+        <div class="copyright">
+             
+    
+           
+        
+        <div class="bodycontainer3">
+        <div class="whitelinediv3"></div>
+             <div class="whitelinediv3phone"></div> <br />   <br />   
+        </div>
+
+ <div class="copyright">
+             
+    <div class="whitelinedivbottom" style="margin-left: -10px;"></div><div class="whitelinedivbottomphone" style="margin-left: -10px;"></div> <br />    
+         <p>Danny Bull &copy; 2023 all rights reserved. <p><a href = "mailto: dannyabull@gmail.com"> dannyabull@gmail.com </a> <a href="tel:+66818485532"> +66.81.848.5532 </a> </p>
+         <a href="https://www.youtube.com/@dannyabull" target="_blank" ><img src="images/youtube.png" style="height: 30px;"/></a>
+         <a href="https://www.vimeo.com/dannybull" target="_blank"  ><img src="images/vimeo.png" style="height: 30px;"/></a>
+         <a href="https://www.instagram.com/dannyabull" target="_blank" ><img src="images/instagram.png" style="height: 30px;"/></a>
+         <a href="https://www.twitter.com/dannyabull" target="_blank"  ><img src="images/twitter.png" style="height: 30px;"/></a>
+         <a href="https://www.linkedin.com/in/dannyabull" target="_blank" ><img src="images/linkedin.png" style="height: 30px;"/></a>
+         <a href = "mailto: dannyabull@gmail.com"> <img src="images/email.png" style="height: 30px;"/></a>
+
+
+
+         <br /> <br /> <br />   
+
+    
+
+
+</html>

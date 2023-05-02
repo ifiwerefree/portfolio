@@ -1,0 +1,1137 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <title>Danny Bull - Portfolio</title>
+    <link rel="shortcut icon" href="https://img.icons8.com/ios-filled/2x/slr-camera.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:type" content="Danny Bull">
+    <meta property="og:url" content="http://www.dannybull.com/goodhamburger0padding/home.html">
+    <meta property="og:image" content="http://www.dannybull.com/goodhamburger0padding/images/webpagethumbnail.png">
+    <meta name="og:image" content="images/webpagethumbnail.png">
+    <section id="showreelclick"> 
+    <link rel="stylesheet" href="style.css">
+    
+    
+
+    <script> 
+
+
+  
+  // create an array to store the images
+  var images = []; 
+
+  
+
+
+  // load the images
+  function preload() {
+    for (var i = 0; i < arguments.length; i++) {
+      images[i] = new Image();
+      images[i].src = preload.arguments[i];
+    }
+  }
+
+  // use the preload function to load the hover image
+  /* preload("images/zanskar.jpg");
+  preload("images/elephants.jpg");
+  preload("images/cannabis.jpg");
+  preload("images/srilanka.jpg");
+  preload("images/cremation.jpg");
+  preload("images/thaicave.jpg");
+  preload("images/rohingya.jpg"); */
+
+
+  preload("images/zanskarhover.jpg");
+  preload("images/pageshover.jpg");
+  preload("images/cremationhover.jpg");
+  preload("images/rohingyahover.jpg");
+  preload("images/mayabayhover.jpg");
+  preload("images/australiahover.jpg");
+  preload("images/thaicavehover.jpg");
+  preload("images/cannabishover.jpg");
+  preload("images/bruneihover.jpg");
+  preload("images/hongkonghover.jpg");
+  preload("images/srilankahover.jpg");
+  preload("images/elephantshover.jpg");
+  preload("images/shadowhover.jpg");
+  preload("images/childboxinghover.jpg");
+  preload("images/wildlifehover.jpg");
+  preload("images/blindhover.jpg");
+  preload("images/massacrehover.jpg");
+  preload("images/philippineshover.jpg");
+  
+  
+  
+  
+  
+
+
+
+</script>
+
+
+<script>
+  var hoverImage = new Image();
+  hoverImage.src = "images/zanskarhover.jpg";
+  hoverImage.onload = function() {
+    // add event listeners for hover and touch
+    document.querySelector('.zanskar').addEventListener('mouseover', function() {
+        this.querySelector('::before').style.backgroundImage = 'url(images/zanskarhover.jpg)';
+        this.querySelector('::before').style.opacity = 0;
+        setTimeout(() => {
+          this.querySelector('::before').style.opacity = 1;
+        }, 500);
+    });
+    document.querySelector('.zanskar').addEventListener('mouseout', function() {
+        this.querySelector('::before').style.backgroundImage = 'none';
+    });
+    document.querySelector('.zanskar').addEventListener('touchstart', function() {
+        this.querySelector('::before').style.backgroundImage = 'url(images/zanskarhover.jpg)';
+        this.querySelector('::before').style.opacity = 0;
+        setTimeout(() => {
+          this.querySelector('::before').style.opacity = 1;
+        }, 50);
+    });
+    document.querySelector('.zanskar').addEventListener('touchend', function() {
+        this.querySelector('::before').style.backgroundImage = 'none';
+    });
+  }
+  
+
+
+  var hoverImage2 = new Image();
+  hoverImage2.src = "images/elephantshover.jpg";
+  hoverImage2.onload = function() {
+    // add event listeners for hover and touch
+    document.querySelector('.elephants').addEventListener('mouseover', function() {
+        this.querySelector('::before').style.backgroundImage = 'url(images/elephantshover.jpg)';
+        this.querySelector('::before').style.opacity = 0;
+        setTimeout(() => {
+          this.querySelector('::before').style.opacity = 1;
+        }, 50);
+    });
+    document.querySelector('.elephants').addEventListener('mouseout', function() {
+        this.querySelector('::before').style.backgroundImage = 'none';
+    });
+    document.querySelector('.elephants').addEventListener('touchstart', function() {
+        this.querySelector('::before').style.backgroundImage = 'url(images/elephantshover.jpg)';
+        this.querySelector('::before').style.opacity = 0;
+        setTimeout(() => {
+          this.querySelector('::before').style.opacity = 1;
+        }, 50);
+    });
+    document.querySelector('.elephants').addEventListener('touchend', function() {
+        this.querySelector('::before').style.backgroundImage = 'none';
+    });
+  }
+
+
+  var hoverImage2 = new Image();
+  hoverImage2.src = "images/srilankahover.jpg";
+  hoverImage2.onload = function() {
+    // add event listeners for hover and touch
+    document.querySelector('.srilanka').addEventListener('mouseover', function() {
+        this.querySelector('::before').style.backgroundImage = 'url(images/srilankahover.jpg)';
+        this.querySelector('::before').style.opacity = 0;
+        setTimeout(() => {
+          this.querySelector('::before').style.opacity = 1;
+        }, 50);
+    });
+    document.querySelector('.srilanka').addEventListener('mouseout', function() {
+        this.querySelector('::before').style.backgroundImage = 'none';
+    });
+    document.querySelector('.srilanka').addEventListener('touchstart', function() {
+        this.querySelector('::before').style.backgroundImage = 'url(images/srilankahover.jpg)';
+        this.querySelector('::before').style.opacity = 0;
+        setTimeout(() => {
+          this.querySelector('::before').style.opacity = 1;
+        }, 50);
+    });
+    document.querySelector('.srilanka').addEventListener('touchend', function() {
+        this.querySelector('::before').style.backgroundImage = 'none';
+    });
+  }
+
+
+
+
+
+
+  var hoverImage2 = new Image();
+  hoverImage2.src = "images/cannabishover.jpg";
+  hoverImage2.onload = function() {
+    // add event listeners for hover and touch
+    document.querySelector('.cannabis').addEventListener('mouseover', function() {
+        this.querySelector('::before').style.backgroundImage = 'url(images/cannabishover.jpg)';
+        this.querySelector('::before').style.opacity = 0;
+        setTimeout(() => {
+          this.querySelector('::before').style.opacity = 1;
+        }, 50);
+    });
+    document.querySelector('.cannabis').addEventListener('mouseout', function() {
+        this.querySelector('::before').style.backgroundImage = 'none';
+    });
+    document.querySelector('.cannabis').addEventListener('touchstart', function() {
+        this.querySelector('::before').style.backgroundImage = 'url(images/cannabishover.jpg)';
+        this.querySelector('::before').style.opacity = 0;
+        setTimeout(() => {
+          this.querySelector('::before').style.opacity = 1;
+        }, 50);
+    });
+    document.querySelector('.cannabis').addEventListener('touchend', function() {
+        this.querySelector('::before').style.backgroundImage = 'none';
+    });
+  }
+
+
+
+  var hoverImage2 = new Image();
+  hoverImage2.src = "images/thaicavehover.jpg";
+  hoverImage2.onload = function() {
+    // add event listeners for hover and touch
+    document.querySelector('.thaicave').addEventListener('mouseover', function() {
+        this.querySelector('::before').style.backgroundImage = 'url(images/thaicavehover.jpg)';
+        this.querySelector('::before').style.opacity = 0;
+        setTimeout(() => {
+          this.querySelector('::before').style.opacity = 1;
+        }, 50);
+    });
+    document.querySelector('.thaicave').addEventListener('mouseout', function() {
+        this.querySelector('::before').style.backgroundImage = 'none';
+    });
+    document.querySelector('.thaicave').addEventListener('touchstart', function() {
+        this.querySelector('::before').style.backgroundImage = 'url(images/thaicavehover.jpg)';
+        this.querySelector('::before').style.opacity = 0;
+        setTimeout(() => {
+          this.querySelector('::before').style.opacity = 1;
+        }, 50);
+    });
+    document.querySelector('.thaicave').addEventListener('touchend', function() {
+        this.querySelector('::before').style.backgroundImage = 'none';
+    });
+  }
+
+
+
+
+  var hoverImage2 = new Image();
+  hoverImage2.src = "images/cremationhover.jpg";
+  hoverImage2.onload = function() {
+    // add event listeners for hover and touch
+    document.querySelector('.cremation').addEventListener('mouseover', function() {
+        this.querySelector('::before').style.backgroundImage = 'url(images/cremationhover.jpg)';
+        this.querySelector('::before').style.opacity = 0;
+        setTimeout(() => {
+          this.querySelector('::before').style.opacity = 1;
+        }, 50);
+    });
+    document.querySelector('.cremation').addEventListener('mouseout', function() {
+        this.querySelector('::before').style.backgroundImage = 'none';
+    });
+    document.querySelector('.cremation').addEventListener('touchstart', function() {
+        this.querySelector('::before').style.backgroundImage = 'url(images/cremationhover.jpg)';
+        this.querySelector('::before').style.opacity = 0;
+        setTimeout(() => {
+          this.querySelector('::before').style.opacity = 1;
+        }, 50);
+    });
+    document.querySelector('.cremation').addEventListener('touchend', function() {
+        this.querySelector('::before').style.backgroundImage = 'none';
+    });
+  }
+
+
+
+
+
+
+  var hoverImage2 = new Image();
+  hoverImage2.src = "images/pageshover.jpg";
+  hoverImage2.onload = function() {
+    // add event listeners for hover and touch
+    document.querySelector('.pages').addEventListener('mouseover', function() {
+        this.querySelector('::before').style.backgroundImage = 'url(images/pageshover.jpg)';
+        this.querySelector('::before').style.opacity = 0;
+        setTimeout(() => {
+          this.querySelector('::before').style.opacity = 1;
+        }, 50);
+    });
+    document.querySelector('.pages').addEventListener('mouseout', function() {
+        this.querySelector('::before').style.backgroundImage = 'none';
+    });
+    document.querySelector('.pages').addEventListener('touchstart', function() {
+        this.querySelector('::before').style.backgroundImage = 'url(images/pageshover.jpg)';
+        this.querySelector('::before').style.opacity = 0;
+        setTimeout(() => {
+          this.querySelector('::before').style.opacity = 1;
+        }, 50);
+    });
+    document.querySelector('.pages').addEventListener('touchend', function() {
+        this.querySelector('::before').style.backgroundImage = 'none';
+    });
+  }
+
+
+
+
+
+
+
+
+  var hoverImage2 = new Image();
+  hoverImage2.src = "images/rohingyahover.jpg";
+  hoverImage2.onload = function() {
+    // add event listeners for hover and touch
+    document.querySelector('.rohingya').addEventListener('mouseover', function() {
+        this.querySelector('::before').style.backgroundImage = 'url(images/rohingyahover.jpg)';
+        this.querySelector('::before').style.opacity = 0;
+        setTimeout(() => {
+          this.querySelector('::before').style.opacity = 1;
+        }, 50);
+    });
+    document.querySelector('.rohingya').addEventListener('mouseout', function() {
+        this.querySelector('::before').style.backgroundImage = 'none';
+    });
+    document.querySelector('.rohingya').addEventListener('touchstart', function() {
+        this.querySelector('::before').style.backgroundImage = 'url(images/rohingyahover.jpg)';
+        this.querySelector('::before').style.opacity = 0;
+        setTimeout(() => {
+          this.querySelector('::before').style.opacity = 1;
+        }, 50);
+    });
+    document.querySelector('.rohingya').addEventListener('touchend', function() {
+        this.querySelector('::before').style.backgroundImage = 'none';
+    });
+  }
+
+
+
+
+
+
+  var hoverImage2 = new Image();
+  hoverImage2.src = "images/mayabayhover.jpg";
+  hoverImage2.onload = function() {
+    // add event listeners for hover and touch
+    document.querySelector('.mayabay').addEventListener('mouseover', function() {
+        this.querySelector('::before').style.backgroundImage = 'url(images/mayabayhover.jpg)';
+        this.querySelector('::before').style.opacity = 0;
+        setTimeout(() => {
+          this.querySelector('::before').style.opacity = 1;
+        }, 50);
+    });
+    document.querySelector('.mayabay').addEventListener('mouseout', function() {
+        this.querySelector('::before').style.backgroundImage = 'none';
+    });
+    document.querySelector('.mayabay').addEventListener('touchstart', function() {
+        this.querySelector('::before').style.backgroundImage = 'url(images/mayabayhover.jpg)';
+        this.querySelector('::before').style.opacity = 0;
+        setTimeout(() => {
+          this.querySelector('::before').style.opacity = 1;
+        }, 50);
+    });
+    document.querySelector('.mayabay').addEventListener('touchend', function() {
+        this.querySelector('::before').style.backgroundImage = 'none';
+    });
+  }
+
+
+
+
+
+
+
+
+
+
+
+  var hoverImage2 = new Image();
+  hoverImage2.src = "images/australiahover.jpg";
+  hoverImage2.onload = function() {
+    // add event listeners for hover and touch
+    document.querySelector('.australia').addEventListener('mouseover', function() {
+        this.querySelector('::before').style.backgroundImage = 'url(images/australiahover.jpg)';
+        this.querySelector('::before').style.opacity = 0;
+        setTimeout(() => {
+          this.querySelector('::before').style.opacity = 1;
+        }, 50);
+    });
+    document.querySelector('.australia').addEventListener('mouseout', function() {
+        this.querySelector('::before').style.backgroundImage = 'none';
+    });
+    document.querySelector('.australia').addEventListener('touchstart', function() {
+        this.querySelector('::before').style.backgroundImage = 'url(images/australiahover.jpg)';
+        this.querySelector('::before').style.opacity = 0;
+        setTimeout(() => {
+          this.querySelector('::before').style.opacity = 1;
+        }, 50);
+    });
+    document.querySelector('.australia').addEventListener('touchend', function() {
+        this.querySelector('::before').style.backgroundImage = 'none';
+    });
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+  var hoverImage2 = new Image();
+  hoverImage2.src = "images/australiahover.jpg";
+  hoverImage2.onload = function() {
+    // add event listeners for hover and touch
+    document.querySelector('.australia').addEventListener('mouseover', function() {
+        this.querySelector('::before').style.backgroundImage = 'url(images/australiahover.jpg)';
+        this.querySelector('::before').style.opacity = 0;
+        setTimeout(() => {
+          this.querySelector('::before').style.opacity = 1;
+        }, 50);
+    });
+    document.querySelector('.australia').addEventListener('mouseout', function() {
+        this.querySelector('::before').style.backgroundImage = 'none';
+    });
+    document.querySelector('.australia').addEventListener('touchstart', function() {
+        this.querySelector('::before').style.backgroundImage = 'url(images/australiahover.jpg)';
+        this.querySelector('::before').style.opacity = 0;
+        setTimeout(() => {
+          this.querySelector('::before').style.opacity = 1;
+        }, 50);
+    });
+    document.querySelector('.australia').addEventListener('touchend', function() {
+        this.querySelector('::before').style.backgroundImage = 'none';
+    });
+  }
+
+
+
+
+
+
+
+
+
+  var hoverImage2 = new Image();
+  hoverImage2.src = "images/bruneihover.jpg";
+  hoverImage2.onload = function() {
+    // add event listeners for hover and touch
+    document.querySelector('.brunei').addEventListener('mouseover', function() {
+        this.querySelector('::before').style.backgroundImage = 'url(images/bruneihover.jpg)';
+        this.querySelector('::before').style.opacity = 0;
+        setTimeout(() => {
+          this.querySelector('::before').style.opacity = 1;
+        }, 50);
+    });
+    document.querySelector('.brunei').addEventListener('mouseout', function() {
+        this.querySelector('::before').style.backgroundImage = 'none';
+    });
+    document.querySelector('.brunei').addEventListener('touchstart', function() {
+        this.querySelector('::before').style.backgroundImage = 'url(images/bruneihover.jpg)';
+        this.querySelector('::before').style.opacity = 0;
+        setTimeout(() => {
+          this.querySelector('::before').style.opacity = 1;
+        }, 50);
+    });
+    document.querySelector('.brunei').addEventListener('touchend', function() {
+        this.querySelector('::before').style.backgroundImage = 'none';
+    });
+  }
+
+
+
+
+
+
+
+
+
+
+  var hoverImage2 = new Image();
+  hoverImage2.src = "images/hongkonghover.jpg";
+  hoverImage2.onload = function() {
+    // add event listeners for hover and touch
+    document.querySelector('.hongkong').addEventListener('mouseover', function() {
+        this.querySelector('::before').style.backgroundImage = 'url(images/hongkonghover.jpg)';
+        this.querySelector('::before').style.opacity = 0;
+        setTimeout(() => {
+          this.querySelector('::before').style.opacity = 1;
+        }, 50);
+    });
+    document.querySelector('.hongkong').addEventListener('mouseout', function() {
+        this.querySelector('::before').style.backgroundImage = 'none';
+    });
+    document.querySelector('.hongkong').addEventListener('touchstart', function() {
+        this.querySelector('::before').style.backgroundImage = 'url(images/hongkonghover.jpg)';
+        this.querySelector('::before').style.opacity = 0;
+        setTimeout(() => {
+          this.querySelector('::before').style.opacity = 1;
+        }, 50);
+    });
+    document.querySelector('.hongkong').addEventListener('touchend', function() {
+        this.querySelector('::before').style.backgroundImage = 'none';
+    });
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+  var hoverImage2 = new Image();
+  hoverImage2.src = "images/shadowhover.jpg";
+  hoverImage2.onload = function() {
+    // add event listeners for hover and touch
+    document.querySelector('.shadow').addEventListener('mouseover', function() {
+        this.querySelector('::before').style.backgroundImage = 'url(images/shadowhover.jpg)';
+        this.querySelector('::before').style.opacity = 0;
+        setTimeout(() => {
+          this.querySelector('::before').style.opacity = 1;
+        }, 50);
+    });
+    document.querySelector('.shadow').addEventListener('mouseout', function() {
+        this.querySelector('::before').style.backgroundImage = 'none';
+    });
+    document.querySelector('.shadow').addEventListener('touchstart', function() {
+        this.querySelector('::before').style.backgroundImage = 'url(images/shadowhover.jpg)';
+        this.querySelector('::before').style.opacity = 0;
+        setTimeout(() => {
+          this.querySelector('::before').style.opacity = 1;
+        }, 50);
+    });
+    document.querySelector('.shadow').addEventListener('touchend', function() {
+        this.querySelector('::before').style.backgroundImage = 'none';
+    });
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+  var hoverImage2 = new Image();
+  hoverImage2.src = "images/childboxinghover.jpg";
+  hoverImage2.onload = function() {
+    // add event listeners for hover and touch
+    document.querySelector('.childboxing').addEventListener('mouseover', function() {
+        this.querySelector('::before').style.backgroundImage = 'url(images/childboxinghover.jpg)';
+        this.querySelector('::before').style.opacity = 0;
+        setTimeout(() => {
+          this.querySelector('::before').style.opacity = 1;
+        }, 50);
+    });
+    document.querySelector('.childboxing').addEventListener('mouseout', function() {
+        this.querySelector('::before').style.backgroundImage = 'none';
+    });
+    document.querySelector('.childboxing').addEventListener('touchstart', function() {
+        this.querySelector('::before').style.backgroundImage = 'url(images/childboxinghover.jpg)';
+        this.querySelector('::before').style.opacity = 0;
+        setTimeout(() => {
+          this.querySelector('::before').style.opacity = 1;
+        }, 50);
+    });
+    document.querySelector('.childboxing').addEventListener('touchend', function() {
+        this.querySelector('::before').style.backgroundImage = 'none';
+    });
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+  var hoverImage2 = new Image();
+  hoverImage2.src = "images/wildlifehover.jpg";
+  hoverImage2.onload = function() {
+    // add event listeners for hover and touch
+    document.querySelector('.wildlife').addEventListener('mouseover', function() {
+        this.querySelector('::before').style.backgroundImage = 'url(images/wildlifehover.jpg)';
+        this.querySelector('::before').style.opacity = 0;
+        setTimeout(() => {
+          this.querySelector('::before').style.opacity = 1;
+        }, 50);
+    });
+    document.querySelector('.wildlife').addEventListener('mouseout', function() {
+        this.querySelector('::before').style.backgroundImage = 'none';
+    });
+    document.querySelector('.wildlife').addEventListener('touchstart', function() {
+        this.querySelector('::before').style.backgroundImage = 'url(images/wildlifehover.jpg)';
+        this.querySelector('::before').style.opacity = 0;
+        setTimeout(() => {
+          this.querySelector('::before').style.opacity = 1;
+        }, 50);
+    });
+    document.querySelector('.wildlife').addEventListener('touchend', function() {
+        this.querySelector('::before').style.backgroundImage = 'none';
+    });
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+  var hoverImage2 = new Image();
+  hoverImage2.src = "images/blindhover.jpg";
+  hoverImage2.onload = function() {
+    // add event listeners for hover and touch
+    document.querySelector('.blind').addEventListener('mouseover', function() {
+        this.querySelector('::before').style.backgroundImage = 'url(images/blindhover.jpg)';
+        this.querySelector('::before').style.opacity = 0;
+        setTimeout(() => {
+          this.querySelector('::before').style.opacity = 1;
+        }, 50);
+    });
+    document.querySelector('.blind').addEventListener('mouseout', function() {
+        this.querySelector('::before').style.backgroundImage = 'none';
+    });
+    document.querySelector('.blind').addEventListener('touchstart', function() {
+        this.querySelector('::before').style.backgroundImage = 'url(images/blindhover.jpg)';
+        this.querySelector('::before').style.opacity = 0;
+        setTimeout(() => {
+          this.querySelector('::before').style.opacity = 1;
+        }, 50);
+    });
+    document.querySelector('.blind').addEventListener('touchend', function() {
+        this.querySelector('::before').style.backgroundImage = 'none';
+    });
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  var hoverImage2 = new Image();
+  hoverImage2.src = "images/massacrehover.jpg";
+  hoverImage2.onload = function() {
+    // add event listeners for hover and touch
+    document.querySelector('.massacre').addEventListener('mouseover', function() {
+        this.querySelector('::before').style.backgroundImage = 'url(images/massacrehover.jpg)';
+        this.querySelector('::before').style.opacity = 0;
+        setTimeout(() => {
+          this.querySelector('::before').style.opacity = 1;
+        }, 50);
+    });
+    document.querySelector('.massacre').addEventListener('mouseout', function() {
+        this.querySelector('::before').style.backgroundImage = 'none';
+    });
+    document.querySelector('.massacre').addEventListener('touchstart', function() {
+        this.querySelector('::before').style.backgroundImage = 'url(images/massacrehover.jpg)';
+        this.querySelector('::before').style.opacity = 0;
+        setTimeout(() => {
+          this.querySelector('::before').style.opacity = 1;
+        }, 50);
+    });
+    document.querySelector('.massacre').addEventListener('touchend', function() {
+        this.querySelector('::before').style.backgroundImage = 'none';
+    });
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+  var hoverImage2 = new Image();
+  hoverImage2.src = "images/philippineshover.jpg";
+  hoverImage2.onload = function() {
+    // add event listeners for hover and touch
+    document.querySelector('.philippines').addEventListener('mouseover', function() {
+        this.querySelector('::before').style.backgroundImage = 'url(images/philippineshover.jpg)';
+        this.querySelector('::before').style.opacity = 0;
+        setTimeout(() => {
+          this.querySelector('::before').style.opacity = 1;
+        }, 50);
+    });
+    document.querySelector('.philippines').addEventListener('mouseout', function() {
+        this.querySelector('::before').style.backgroundImage = 'none';
+    });
+    document.querySelector('.philippines').addEventListener('touchstart', function() {
+        this.querySelector('::before').style.backgroundImage = 'url(images/philippineshover.jpg)';
+        this.querySelector('::before').style.opacity = 0;
+        setTimeout(() => {
+          this.querySelector('::before').style.opacity = 1;
+        }, 50);
+    });
+    document.querySelector('.philippines').addEventListener('touchend', function() {
+        this.querySelector('::before').style.backgroundImage = 'none';
+    });
+  }
+
+
+
+
+
+
+</script>
+
+
+
+
+
+</head>
+
+
+
+
+
+
+    <div class="bodycontainer">
+
+        <!--
+    <div class="parallax-container"> 
+        <-- other elements go here --
+    </div> -->
+            
+<header>
+    <section id="showreel"> </section>
+    <div class="navholder" id="navholder">   
+    
+    <nav class="navbar" id="navbar">
+        
+        <div class="logo"><a href="home.html"><img src="images/hiddenlogo.png" class="img-responsive" /></a>
+        </div> <!-- closes div class logo -->
+
+        <ul class="nav-menu">
+            <li class="nav-item">
+                    <a href="home.html" class="nav-link">Home</a>
+            </li>
+                <li class="nav-item">
+                    <a href="videos.html" class="nav-link">Videos</a>
+            </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+            </li>
+
+        </ul>
+
+
+        <div class="hamburger" style="margin-left: 110px;"> 
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <div class="hamburgertext" style="color: white;"> </div>
+        </div> <!-- closer div class hamburger --> 
+    </nav>
+    </div> <!-- closes div class navholder -->
+</header>
+
+
+
+<button id="back-to-top-btn">Back to top &#8593</button>
+ <body>
+
+    
+
+<div class="whiteline"></div> 
+<div class="whitelinedivtopabout"></div> <div class="whitelinedivtopaboutphone" style="margin-top: 10px;"></div>
+
+    
+
+    <br>
+
+        
+        <div class="bigprojectcontainer">
+            
+              
+        
+
+
+
+
+
+
+
+
+
+<!--Featured Videos-->
+<br /><br />
+
+
+    
+    <div class="bodycontainernopad"> <br />
+    
+    <div class="videos"> 
+    
+        <h4> Video Portfolio:</h4><p></p>
+
+    <!-- COLUMN 1 !!!!! -->
+    <div class="column1">    
+
+        <div class="zanskar">
+            <a href="zanskar.html">
+            <img src="images/zanskar.jpg" href="zanskar.html"/></div></a>
+            <h3>  Return to Zanskar </h3><p> 
+        
+
+
+            <div class="rohingya">
+            <a href="rohingya.html">
+            <img src="images/rohingya.jpg" href="rohingya.html"/></div></a>
+            <h3>Plight of the Rohingya</h3><p> 
+
+            
+
+         <div class="thaicave">
+
+            <a href="thaicave.html">
+            <img src="images/thaicave.jpg" /></div></a>
+            <h3> The Thai Cave Rescue</h3> <p>
+            
+        
+
+
+         <div class="hongkong">
+            <a href="hongkong.html">
+            <img src="images/hongkong.jpg" href="hongkong.html"/></div></a>
+            <h3>  Hong Kong Protests </h3><p>
+
+
+
+
+             <div class="shadow">
+            <a href="shadow.html">
+            <img src="images/shadow.jpg"/></div></a>
+            <h3>Shadow of the Drug War</h3> 
+
+
+
+
+                 <div class="blind">
+            <a href="blind.html">
+            <img src="images/blind.jpg" href="blind.html"/></div></a>
+            <h3>  The Thai Blind Orchestra </h3><p><br />
+        
+
+
+  <!--         
+
+          
+
+
+        <div class="motion">
+
+            <a href="blindorchestra.html">
+            <img src="https://petapixel.com/assets/uploads/2016/01/101.jpg" /></a>
+
+        </div>
+
+            <a href="zanskar.html"/> <h3> The Best Tone in Myanmar </h3> </a>
+
+        -->
+
+    </div>
+
+
+
+
+
+    <!-- COLUMN 2 !!!!! -->
+    <div class="column2">    
+       <div class="pages">
+
+            <a href="pages-of-testimony.html">
+            <img src="images/pages.jpg"/></div></a>
+            <h3>Pages of Testimony</h3> <p>
+
+
+
+            
+
+
+            <div class="mayabay">
+            <a href="mayabay.html">
+            <img src="images/mayabay.jpg"/></div></a>
+            <h3>The Beach</h3> 
+
+       
+        
+
+
+        <div class="cannabis">
+
+           <a href="cannabis.html">
+            <img src="images/cannabis.jpg" /></div></a>
+            <h3>Thailand Legalizes Cannabis </h3> <p>
+
+        
+
+            <div class="srilanka">
+
+            <a href="srilanka.html">
+            <img src="images/srilanka.jpg"/></div></a>
+            <h3>Sri Lanka's Economic Crisis</h3> <p>
+        
+        
+        
+
+        <div class="childboxing">
+            <a href="childboxing.html">
+            <img src="images/childboxing.jpg"/></div></a>
+            <h3>Thailand's Child Boxers</h3> 
+
+
+             <div class="massacre">
+            <a href="massacre.html">
+            <img src="images/massacre.jpg"/></div></a>
+            <h3>Witness: Thammasat University Massacre</h3> 
+
+<!--
+        <div class="motion">
+
+            <a href="blindorchestra.html">
+            <img src="https://petapixel.com/assets/uploads/2016/01/101.jpg" /></a>
+        </div>   
+
+            <a href="zanskar.html"/> <h3>Thailand Wildlife Trafficking </h3> </a>
+-->
+        
+
+
+
+    </div>
+       
+
+
+
+
+
+    <div class="column3">    
+        
+
+            <div class="cremation">
+
+            <a href="cremation.html">
+            <img src="images/cremation.jpg" /></div></a>
+            <h3> A Funeral Fit For A King</h3>  <p> 
+
+
+
+            <div class="australia">
+            <a href="australia.html">
+            <img src="images/australia.jpg" /></div> </a>
+            <h3>Australia Wildfires </h3><p>
+
+
+            
+
+
+            <div class="brunei">
+            <a href="brunei.html">
+            <img src="images/brunei.jpg" /></div></a>
+            <h3>  Brunei - Sharia Law </h3> <p>
+        
+
+
+        <div class="elephants">
+            <a href="elephants.html">
+            <img src="images/elephants.jpg" /></div> </a>
+            <h3>The Ethics of Elephant Tourism </h3><p>
+
+
+
+
+
+        <div class="wildlife">
+            <a href="wildlife.html">
+            <img src="images/wildlife.jpg" href="wildlife.html"/></div></a>
+            <h3>  Thailand's Wildlife Trade  </h3><p> 
+
+
+        
+
+        <div class="philippines">
+            <a href="philippines.html">
+            <img src="images/philippines.jpg" href="philippines.html"/></div></a>
+            <h3>  The Philippines 2022 Election </h3><p> 
+
+ <!--
+
+
+        <div class="nepal">
+            <a href="nepal.html">
+            <img src="images/nepal.jpg" href="nepal.html"/></div></a>
+            <h3>  Nepal Earthquake </h3><p> 
+
+         <div class="moon">
+            <a href="moon.html">
+            <img src="images/moon.jpg" /></div> </a>
+            <h3>Rethinking The Full Moon Party </h3><p>
+
+        
+        <div class="rehab">
+            <a href="rehab.html">
+            <img src="images/rehab.jpg"/></div></a>
+            <h3>Philippine Drug War - Inside a Rehab Centre</h3> 
+        
+        </div>
+-->
+
+
+
+
+        
+        
+        <!--
+
+        <div class="motion">
+
+            <a href="blindorchestra.html">
+            <img src="images/zanskar.jpg" /></a>
+        </div>    
+            <a href="zanskar.html"/> <h3> Govinda Bhasya - In The Living Room</h3> </a>
+
+        -->
+
+
+    
+</div> <!-- closes "videos" div-->
+</div> <!-- closes "body container" div-->
+
+
+
+   <!-- <div class="backgroundgradient" id="backgroundgradient">     -->
+
+    
+        <div class="bodycontainernopad">
+          
+          <!--  <div class="aboutme">
+                <h4>About Me:</h4>
+                 <p>Danny Bull is an award winning journalist and filmmaker working as a cameraman for the BBC based in Bangkok, Thailand. He joined the BBC first as a Video Journalist in 2014 and then promoted to Senior Cameraman in 2017 covering the South-east Asia and beyond.
+                <p><p>
+
+                Prior to joining the BBC, Danny was a Multimedia Producer for the Associated Press. He has worked across five continents directing, producing, and filming news and documentaries. <p><p>
+
+                Danny was born in Rio de Janiero, Brazil and raised in Asia, Europe and the U.S. He speaks English, Spanish, Portuguese and Thai.
+                <p><p>    
+                Click here to download resume
+                        -->
+                    <!--      <section id="aboutme">
+                          </section>
+                <h5>
+                <p></p> Danny Bull is an accomplished journalist and filmmaker, currently working as a Senior Cameraman for the BBC in Bangkok, Thailand. He has been with the BBC since 2014 first as a Video Journalist in 2014 and then promoted to Senior Cameraman in 2017 covering stories across South-East Asia and beyond.
+
+                <p><p></p></p> Prior to joining the BBC, Danny was a Multimedia and Interactive Producer for the Associated Press, where he honed his skills in directing, producing, and filming news and documentaries on a global scale. He has worked across five continents, gaining a broad global perspective.<p><p>
+
+                Born in Rio de Janeiro, Brazil, and raised in Asia, Europe, and the United States, Danny is fluent in English, Spanish, Portuguese and Thai which allows him to effectively communicate and work with people from diverse backgrounds. He has received numerous awards for his work and is known for his ability to capture compelling stories and images from around the world.
+                <p><p></p></p>    
+                Click here to download resume
+                </p></p></h5>
+            </div>
+            
+            
+        </div></div>
+
+     -->
+
+
+<script src="script.js"></script>
+
+
+
+
+
+
+    </body>        
+
+        
+   
+
+<div class="hiddenhover">
+   
+   <img src="images/pageshover.jpg"/>
+   <img src="images/mayabayhover.jpg"/>
+   <img src="images/australiahover.jpg"/>
+   <img src="images/cannabishover.jpg"/>
+   <img src="images/bruneihover.jpg"/>
+   <img src="images/elephantshover.jpg"/>
+   <img src="images/shadowhover.jpg"/>
+   <img src="images/childboxinghover.jpg"/>
+   <img src="images/wildlifehover.jpg"/>
+   <img src="images/blindhover.jpg"/>
+   <img src="images/massacrehover.jpg"/>
+   <img src="images/philippineshover.jpg"/>
+</div>
+    
+    
+        <div class="bodycontainer">
+             
+        <div class="copyright">
+             
+    
+           <!-- <div class="whitelinedivbottom"></div><div class="whitelinedivbottomphone" style=""></div> <br />   -->
+        
+        <div class="bodycontainer3">
+        <div class="whitelinediv3"></div>
+             <div class="whitelinediv3phone"></div> <br />   <br />   
+        </div>
+
+ <div class="copyright">
+             
+    <div class="whitelinedivbottom" style="margin-left: -10px;"></div><div class="whitelinedivbottomphone" style="margin-left: -10px;"></div> <br />    
+         <p>Danny Bull &copy; 2023 all rights reserved. <p><a href = "mailto: dannyabull@gmail.com"> dannyabull@gmail.com </a> <a href="tel:+66818485532"> +66.81.848.5532 </a> </p>
+         <a href="https://www.youtube.com/@dannyabull" target="_blank" ><img src="images/youtube.png" style="height: 30px;"/></a>
+         <a href="https://www.vimeo.com/dannybull" target="_blank"  ><img src="images/vimeo.png" style="height: 30px;"/></a>
+         <a href="https://www.instagram.com/dannyabull" target="_blank" ><img src="images/instagram.png" style="height: 30px;"/></a>
+         <a href="https://www.twitter.com/dannyabull" target="_blank"  ><img src="images/twitter.png" style="height: 30px;"/></a>
+         <a href="https://www.linkedin.com/in/dannyabull" target="_blank" ><img src="images/linkedin.png" style="height: 30px;"/></a>
+         <a href = "mailto: dannyabull@gmail.com"> <img src="images/email.png" style="height: 30px;"/></a>
+
+
+
+         <br /> <br /> <br />   
+
+    
+
+
+</html>
